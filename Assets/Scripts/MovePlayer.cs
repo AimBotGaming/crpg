@@ -12,7 +12,6 @@ public class MovePlayer : MonoBehaviour {
 
 		Vector3 tr = move * velocity * Time.deltaTime;
 		this.transform.Translate (tr);
-		Camera.main.transform.Translate(tr, Space.World);
 
 	}
 }

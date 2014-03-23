@@ -11,7 +11,6 @@ public class ZoomCamera : MonoBehaviour {
 	public float speed;
 
 	void Update () {
-		Camera.main.transform.LookAt (player);
 		float y = Camera.main.orthographicSize;
 		float axe = Input.GetAxis ("Mouse ScrollWheel");
 		float newY = y + 5f * axe;
