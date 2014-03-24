@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovePlayer : MonoBehaviour {
+public class MovePlayer : MonoBehaviour 
+{
+	public float speedWalk;
+	public float runMultiplier;
 
-	public float velocity;
-
-	void FixedUpdate() {
+	void FixedUpdate() 
+	{
 		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
-		Vector3 move = new Vector3 (h, 0.0f, v);
 
-		Vector3 tr = move * velocity * Time.deltaTime;
-		this.transform.Translate (tr);
-
+		rigidbody.velocity = new Vector3 
+		(
+			h * speedWalk * Time.deltaTime,
+			0.0f,
+			v * speedWalk * Time.deltaTime
+		);
 	}
 }
