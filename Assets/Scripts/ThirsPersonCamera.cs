@@ -50,6 +50,7 @@ public class ThirsPersonCamera : MonoBehaviour
 		this.transform.position = Vector3.Lerp (current.position, camPos, Time.deltaTime * moveSmoothines);
 		this.transform.rotation = Quaternion.Lerp (current.rotation, camRot, Time.deltaTime * rotateSmoothines);
 		Camera.main.fieldOfView = Mathf.Lerp (curZoom, newZoom, Time.deltaTime * zoomSmoothines);
+
 	}
 
 }

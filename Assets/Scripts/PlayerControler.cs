@@ -17,22 +17,30 @@ public class PlayerControler : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		float v = Input.GetAxis ("Vertical");
-		float h = Input.GetAxis ("Horizontal");
+		float v = Input.GetAxis("Vertical");
+		float h = Input.GetAxis("Horizontal");
+        float ts = Input.GetAxis("Sprint");
 
-		Ray mouseRay = Camera.main.ScreenPointToRay (Input.mousePosition);
-		RaycastHit look;
-		Physics.Raycast (mouseRay, out look);
+        bool s;
+        if (ts > 0) s = true;
+        else s = false;
 
-		if (look.collider.gameObject.tag == "Ground") 
-		{
-			Vector3 _target = look.point;
-			_target.y = transform.position.y;
+        Rotate();
 
-			transform.LookAt(_target);
-		}
-
-		animator.SetFloat ("S_vert", v);
-		animator.SetFloat ("S_hori", h);
+		animator.SetFloat("S_vert", v);
+		animator.SetFloat("S_hori", h);
+        animator.SetBool("Sprint", s);
 	}
+
+    void Rotate()
+    {
+		Vector3 MouseWorldPosition = Camera.main.ScreenToWorldPoint
+		(new Vector3(
+			Input.mousePosition.x,
+			Input.mousePosition.y,
+			(transform.position - Camera.main.transform.position).magnitude
+		));
+		transform.LookAt(MouseWorldPosition);
+		transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
+    }
 }
