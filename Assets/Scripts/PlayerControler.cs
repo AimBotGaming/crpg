@@ -12,24 +12,32 @@ public class PlayerControler : MonoBehaviour
 	{
 		animator = GetComponent<Animator> ();
 		if(animator.layerCount >=2)
-			animator.SetLayerWeight(1, 1);
+			animator.SetLayerWeight (1, 1);
 	}
 
 	void FixedUpdate()
 	{
-		float v = Input.GetAxis("Vertical");
-		float h = Input.GetAxis("Horizontal");
-        float ts = Input.GetAxis("Sprint");
+		float v = Input.GetAxis ("Vertical");
+		float h = Input.GetAxis ("Horizontal");
+        float ts = Input.GetAxis ("Sprint");
+		float rhp = Input.GetAxisRaw ("RHandPow");
+
 
         bool s;
         if (ts > 0) s = true;
         else s = false;
 
+		bool rHandPow;
+		if (rhp == 1) rHandPow = true;
+		else rHandPow = false;
+
+
         Rotate();
 
-		animator.SetFloat("S_vert", v);
-		animator.SetFloat("S_hori", h);
-        animator.SetBool("Sprint", s);
+		animator.SetFloat ("S_vert", v);
+		animator.SetFloat ("S_hori", h);
+        animator.SetBool ("Sprint", s);
+		animator.SetBool ("LowAtk", rHandPow);
 	}
 
     void Rotate()
@@ -40,7 +48,7 @@ public class PlayerControler : MonoBehaviour
 			Input.mousePosition.y,
 			(transform.position - Camera.main.transform.position).magnitude
 		));
-		transform.LookAt(MouseWorldPosition);
-		transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
+		transform.LookAt (MouseWorldPosition);
+		transform.rotation = Quaternion.Euler (new Vector3 (0, transform.rotation.eulerAngles.y, 0));
     }
 }
