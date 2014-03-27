@@ -50,7 +50,6 @@
      <Compile Include="Assets\Scripts\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\ThirsPersonCamera.cs" />
      <Compile Include="Assets\Scripts\WeaponsList.cs" />
-     <None Include="Assets\Standard Assets\Shaders\DifSpecTransp.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

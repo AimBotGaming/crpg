@@ -12,14 +12,20 @@ public class PlayerStats : MonoBehaviour {
 	public GameObject Weapon;
 
 	[System.NonSerialized]
-	public WeaponsList killingList = new WeaponsList();
+	public WeaponsList _weaponsList;
+
+	void Awake()
+	{
+		_weaponsList = gameObject.AddComponent<WeaponsList> ();
+	}
 
 	void Start()
 	{
-		killingList.Initialize ();
-		Weapon = (GameObject) Instantiate (Resources.Load (killingList._swords ["shortSword1"].path));
+		_weaponsList.Initialize ();
+		Weapon = (GameObject) Instantiate (Resources.Load (_weaponsList._swords ["shortSword1"].path));
 		Weapon.transform.parent = RightHandHold;
-		Weapon.transform.position = RightHandHold.position + killingList._swords["shortSword1"].offset;
+		Weapon.transform.localPosition = _weaponsList._swords["shortSword1"].offset;
+		Weapon.transform.localRotation = Quaternion.Euler (0.0f, -90.0f, 0.0f);
 	}
 
 }
