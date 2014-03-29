@@ -17,10 +17,10 @@ public class PlayerControler : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		float v = Input.GetAxis ("Vertical");
-		float h = Input.GetAxis ("Horizontal");
-        float ts = Input.GetAxis ("Sprint");
-		float rhp = Input.GetAxisRaw ("RHandPow");
+		float v = Input.GetAxis ("Vertical");       //Vertical movement
+		float h = Input.GetAxis ("Horizontal");     //Horizontal movement
+        float ts = Input.GetAxis ("Sprint");        //Is player sprining
+		float rhp = Input.GetAxisRaw ("RHandPow");  //Power attack with right hand
 
 
         bool s;
@@ -42,13 +42,17 @@ public class PlayerControler : MonoBehaviour
 
     void Rotate()
     {
-		Vector3 MouseWorldPosition = Camera.main.ScreenToWorldPoint
-		(new Vector3(
-			Input.mousePosition.x,
-			Input.mousePosition.y,
-			(transform.position - Camera.main.transform.position).magnitude
-		));
-		transform.LookAt (MouseWorldPosition);
-		transform.rotation = Quaternion.Euler (new Vector3 (0, transform.rotation.eulerAngles.y, 0));
+        Plane playerPlane = new Plane(Vector3.up, transform.position);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float hit = 0.0f;
+
+        if(playerPlane.Raycast(ray, out hit))
+        {
+            Vector3 target = ray.GetPoint(hit);
+            Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+        }
+
     }
 }
