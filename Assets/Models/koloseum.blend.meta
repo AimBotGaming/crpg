@@ -22,6 +22,16 @@ ModelImporter:
     100032: wyciecie
     100034: wyciecie_001
     100036: wymiary_cz__owieka__r__ce_wzd__u___t__owia_
+    100038: ciemnosc
+    100040: ciemnosc_bok
+    100042: ciemnosc_bok_001
+    100044: krata_g__owna
+    100046: podloze
+    100048: sciany
+    100050: sciany_collider
+    100052: sciany_piach
+    100054: sciany_tla
+    100056: krata_glowna
     400000: __ciany
     400002: ciemno____
     400004: ciemno_____001
@@ -41,6 +51,16 @@ ModelImporter:
     400032: wyciecie
     400034: wyciecie_001
     400036: wymiary_cz__owieka__r__ce_wzd__u___t__owia_
+    400038: ciemnosc
+    400040: ciemnosc_bok
+    400042: ciemnosc_bok_001
+    400044: krata_g__owna
+    400046: podloze
+    400048: sciany
+    400050: sciany_collider
+    400052: sciany_piach
+    400054: sciany_tla
+    400056: krata_glowna
     2300000: __ciany
     2300002: ciemno____
     2300004: ciemno_____001
@@ -59,6 +79,16 @@ ModelImporter:
     2300030: wyciecie
     2300032: wyciecie_001
     2300034: wymiary_cz__owieka__r__ce_wzd__u___t__owia_
+    2300036: ciemnosc
+    2300038: ciemnosc_bok
+    2300040: ciemnosc_bok_001
+    2300042: krata_g__owna
+    2300044: podloze
+    2300046: sciany
+    2300048: sciany_collider
+    2300050: sciany_piach
+    2300052: sciany_tla
+    2300054: krata_glowna
     3300000: __ciany
     3300002: ciemno____
     3300004: ciemno_____001
@@ -77,6 +107,16 @@ ModelImporter:
     3300030: wyciecie
     3300032: wyciecie_001
     3300034: wymiary_cz__owieka__r__ce_wzd__u___t__owia_
+    3300036: ciemnosc
+    3300038: ciemnosc_bok
+    3300040: ciemnosc_bok_001
+    3300042: krata_g__owna
+    3300044: podloze
+    3300046: sciany
+    3300048: sciany_collider
+    3300050: sciany_piach
+    3300052: sciany_tla
+    3300054: krata_glowna
     4300000: wrota_001
     4300002: ciemno_____001
     4300004: ciemno____
@@ -95,6 +135,16 @@ ModelImporter:
     4300030: krata_g___wna
     4300032: wymiary_cz__owieka__r__ce_wzd__u___t__owia_
     4300034: __ciany_t__a
+    4300036: sciany_collider
+    4300038: ciemnosc_bok_001
+    4300040: sciany_piach
+    4300042: ciemnosc_bok
+    4300044: krata_g__owna
+    4300046: ciemnosc
+    4300048: sciany
+    4300050: podloze
+    4300052: sciany_tla
+    4300054: krata_glowna
     7400000: Default Take
     9500000: //RootNode
   materials:
