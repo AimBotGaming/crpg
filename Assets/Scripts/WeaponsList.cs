@@ -20,6 +20,7 @@ public class WeaponsList : MonoBehaviour
 	public void Initialize()
 	{
 		AddSword("shortSword1");
+		AddSword("scimitar001");
 	}
 
 	public void AddSword(string path)
@@ -28,6 +29,6 @@ public class WeaponsList : MonoBehaviour
 		temp.path = path;
 		temp.offset = new Vector3(0.09f, -0.04f, 0.1f);
 
-		_swords ["shortSword1"] = temp;
+		_swords [path] = temp;
 	}
 }
