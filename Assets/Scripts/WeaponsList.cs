@@ -19,15 +19,14 @@ public class WeaponsList : MonoBehaviour
 
 	public void Initialize()
 	{
-		AddSword("shortSword1");
-		AddSword("scimitar001");
+        AddSword("shs1", new Vector3(0.05f, -0.01f, 0.0f));
 	}
 
-	public void AddSword(string path)
+	public void AddSword(string path, Vector3 off)
 	{
 		Sword temp = new Sword();
 		temp.path = path;
-		temp.offset = new Vector3(0.09f, -0.04f, 0.1f);
+		temp.offset = off;
 
 		_swords [path] = temp;
 	}

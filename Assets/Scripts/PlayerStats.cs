@@ -21,11 +21,13 @@ public class PlayerStats : MonoBehaviour {
 
 	void Start()
 	{
+        string _curWeap = "shs1";
+
 		_weaponsList.Initialize ();
-		Weapon = (GameObject) Instantiate (Resources.Load (_weaponsList._swords ["scimitar001"].path));
+		Weapon = (GameObject) Instantiate (Resources.Load (_weaponsList._swords [_curWeap].path));
 		Weapon.transform.parent = RightHandHold;
-		Weapon.transform.localPosition = _weaponsList._swords["scimitar001"].offset;
-		Weapon.transform.localRotation = Quaternion.Euler (0.0f, -90.0f, 0.0f);
+		Weapon.transform.localPosition = _weaponsList._swords[_curWeap].offset;
+		Weapon.transform.localRotation = Quaternion.Euler (90.0f, 0.0f, 0.0f);
 	}
 
 }
